@@ -14,7 +14,7 @@
         />
     </head>
 
-    <body onscroll="onScroll()" class="menu-expanded">
+    <body onscroll="onScroll()" class="">
         <nav id="navigation" class="">
             <div class="wrapper">
                 <a class="logo" href="#">
@@ -80,7 +80,7 @@
 
                     <ul class="social-links">
                         <li>
-                            <a href="https://instagram.com/maykbrito"
+                            <a target="_blank" href="https://instagram.com/maykbrito"
                                 ><svg
                                     width="24"
                                     height="24"
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://facebook.com/maykbrito"
+                            <a target="_blank" href="https://facebook.com/maykbrito"
                                 ><svg
                                     width="24"
                                     height="24"
@@ -132,7 +132,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://youtube.com/maykbrito"
+                            <a target="_blank" href="https://youtube.com/maykbrito"
                                 ><svg
                                     width="24"
                                     height="24"
@@ -160,7 +160,11 @@
                     </ul>
                 </div>
 
-                <button class="open-menu">
+                <button
+                arial-expanded="false"
+                aria-label="Abrir menu" 
+                onclick="openMenu()"
+                class="open-menu">
                     <svg
                         width="40"
                         height="40"
@@ -192,7 +196,12 @@
                     </svg>
 
                 </button>
-                <button class="close-menu">
+                <button 
+                arial-expanded="true"
+                aria-label="Fechar menu"
+                onclick="closeMenu()"
+                class="close-menu" 
+                >
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M30 10L10 30M10 10L30 30" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>

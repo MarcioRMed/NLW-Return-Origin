@@ -28,6 +28,8 @@ body{
     font-family: 'DM Sans';
     font-size: 1.6rem;
     text-align: center;
+
+    overflow: overlay; /* sobrepoe a largura do body sobre o scroll */
 }
 
 .wrapper{
@@ -179,13 +181,23 @@ nav.scroll svg:nth-child(1) path{
     fill:white;
 }
 
-nav.scroll svg:nth-child(2) path{
+nav.scroll button path{
     stroke:white;
+}
+
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* ===MENU-EXPANDED============================= */
 body.menu-expanded {
     overflow: hidden; /* remove os scroll x e y ( transbordamento de contéudo */ 
+}
+
+body.menu-expanded > :not(nav) { /* 1 nível some todos elementos da tela menos o nav */ 
+ display: none;
 }
 
 .menu,
@@ -212,11 +224,52 @@ body.menu-expanded .menu{
 
     width: 100vw;
     height: 100vh;
+
+    padding-top: var(--nav-height);
 }
 
 body.menu-expanded nav{
-    position:relative;
+    position:relative; /* remove position fixed */ 
 }
+
+
+.menu ul:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;  
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.menu .button{
+    background: #fff;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block; /* tira a sobreposicao dos elementos inline - aplica margin e outras caracteristicas*/ 
+    
+    padding: 16px 32px;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
 
 .social-links{
     display: flex;
@@ -225,7 +278,15 @@ body.menu-expanded nav{
     gap: 3.2rem;
 }
 
+body.menu-expanded .logo,
+body.menu-expanded nav button{
+    position: relative;
+    z-index: 100;
+}
 
+body.menu-expanded .logo path{
+    fill:white
+}
 
 
 
