@@ -13,9 +13,19 @@
     --paragraph: hsla(210, 9%, 31%, 1);
     --brand-beige: hsla(39, 100%, 97%, 1);
     --brand-light: hsl(148, 23%, 89%);
+
+    --bg-light: hsl(180,14%,97%);
+
     --nav-height: 7.2rem;
 
 }
+
+html{
+    /* chrome://flags/#smooth-scrolling */
+    scroll-behavior: smooth; /* scroll suave */
+}
+
+
 
 html,
 body{
@@ -30,6 +40,8 @@ body{
     text-align: center;
 
     overflow: overlay; /* sobrepoe a largura do body sobre o scroll */
+
+    background: var(--bg-light);
 }
 
 .wrapper{
@@ -41,114 +53,10 @@ ul{
     list-style: none;
 }
 
-/* ===HEADER============================================= */
-
-header{    
-    margin-top: calc(4.1rem + var(--nav-height));   
+section{
+    padding-block:10rem; 
 }
 
-/* criando um elemento tag html pelo css */
-
-header::before {
-    content: "";
-    width:100%;
-    height: calc(108rem + var(--nav-height));
-    background-color: var(--brand-light);
-    display: block; 
-
-    position: absolute;
-    top:0; 
-    left: 0;
-    z-index: -1;    
-}
-
-header h4{
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
-}
-
-header h1{
-    font-size: 3.4rem;
-    color: var(--headline);
-    line-height: 130%;
-
-    margin-bottom: 2.4rem;
-}
-
-header p{
-    font-size: 1.8rem;
-    line-height: 150%;
-    font-weight:400;
-    color:var(--paragraph);
-
-    margin-bottom: 3.2rem;
-} 
-
-header button{
-    background:var(--primary-color);
-    
-    border: none;
-    border-radius: 4rem ;
-
-    margin-bottom: 6rem;
-
-    height: 5.2rem;
-    width: 26.3rem;
-
-    color: #fff;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-
-header img{
-    width: 26.4rem;
-    display: block;
-    margin: auto;
-    object-position: 0rem 2rem; /* posicionamento imagem x / y  */
-}
-
-/*  */
-
-.stats{
-    width:32.7rem;
-
-    padding-block: 4rem; /* padding top- bottom = 4rem  */ 
-    margin-inline: auto; /* margin left right = auto */
-
-    background-color:var(--brand-beige);
-    border: 1px solid var(--brand-light);
-    border-radius: 0.6rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6rem;
-}
-
-.stat h3{
-    font-size: 4.8rem;
-    color: var(--headline);
-    line-height: 130%;
-
-    margin-bottom: .4rem;
-}
-
-.stat p {
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 1.6rem;
-    line-height: 150%;
-}
 
 /* ===NAVIGATION============================= */
 
@@ -161,8 +69,10 @@ nav{
     
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    /* width: 100vw; */
+    width: 102%;
+    
+    z-index: 100;
     
 }
 
@@ -174,11 +84,11 @@ nav .wrapper{
 
 nav.scroll{
     background: var(--primary-color);
-    width: 100vw;
-    width: 102%;
+   
+    
 }
 
-nav.scroll svg:nth-child(1) path{
+nav.scroll .logo path{
     fill:white;
 }
 
@@ -192,13 +102,16 @@ nav button{
     cursor: pointer;
 }
 
+
+
 /* ===MENU-EXPANDED============================= */
+
 body.menu-expanded {
     overflow: hidden; /* remove os scroll x e y ( transbordamento de contéudo */ 
 }
 
 body.menu-expanded > :not(nav) { /* 1 nível some todos elementos da tela menos o nav */ 
- display: none;
+ visibility: hidden;
 }
 
 .menu,
@@ -215,7 +128,10 @@ body.menu-expanded .close-menu{
     visibility: visible;
 }
 
-
+.menu{
+    /* animação */
+    transform: translateY(100%);
+}
 
 body.menu-expanded .menu{
     position: fixed;
@@ -227,10 +143,10 @@ body.menu-expanded .menu{
     height: 100vh;
 
     padding-top: var(--nav-height);
-}
-
-body.menu-expanded nav{
-    position:relative; /* remove position fixed */ 
+    /* animação */
+    transition: transform 300ms;
+    transform: translateY(0)
+   
 }
 
 
@@ -289,6 +205,117 @@ body.menu-expanded .logo path{
     fill:white
 }
 
+/* ===HOME============================================= */
+
+#home{    
+    padding-top: calc(4.1rem + var(--nav-height));   
+}
+
+/* criando um elemento tag html pelo css */
+
+#home::before {
+    content: "";
+    width:100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--brand-light);
+    display: block; 
+
+    position: absolute;
+    top:0; 
+    left: 0;
+    z-index: -1;    
+}
+
+#home h4{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.6rem;
+}
+
+#home h1{
+    font-size: 3.4rem;
+    color: var(--headline);
+    line-height: 130%;
+
+    margin-bottom: 2.4rem;
+}
+
+#home p{
+    font-size: 1.8rem;
+    line-height: 150%;
+    font-weight:400;
+    color:var(--paragraph);
+
+    margin-bottom: 3.2rem;
+} 
+
+#home button{
+    background:var(--primary-color);
+    
+    border: none;
+    border-radius: 4rem ;
+
+    margin-bottom: 6rem;
+
+    height: 5.2rem;
+    width: 26.3rem;
+
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home img{
+    width: 26.4rem;
+    display: block;
+    margin: auto;
+    object-position: 0rem 2rem; /* posicionamento imagem x / y  */
+}
+
+/*  */
+
+#home.stats{
+    width:32.7rem;
+
+    padding-block: 4rem; /* padding top- bottom = 4rem  */ 
+    margin-inline: auto; /* margin left right = auto */
+
+    background-color:var(--brand-beige);
+    border: 1px solid var(--brand-light);
+    border-radius: 0.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;
+}
+
+#home.stat h3{
+    font-size: 4.8rem;
+    color: var(--headline);
+    line-height: 130%;
+
+    margin-bottom: .4rem;
+}
+
+#home.stat p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+
+
 /* ===SERVICES========================================== */
 
 #services header h4 {
@@ -312,9 +339,26 @@ body.menu-expanded .logo path{
     margin-bottom: 6rem;
 }
 
+#services .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+#services .card{
+    padding: 2.4rem;
+    text-align: left;
+    background: #fff;
+    border: 1px solid var(--brand-light);
+    border-radius: .6rem;
+}
+
+#services .card h3{
+    margin-block: 1.6rem; /* top botton */
+}
 
 
-
+/* ===ABOUT========================================== */
 
 
 
