@@ -3,8 +3,7 @@ function onScroll(){
         navigation.classList.add('scroll') 
         
     } else {
-        navigation.classList.remove('scroll')
-        
+        navigation.classList.remove('scroll')       
        
     }
 }

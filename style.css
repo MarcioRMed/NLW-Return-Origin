@@ -1,6 +1,7 @@
 /* ===GERAL============================================== */
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -16,6 +17,13 @@
 
 }
 
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
+
 body{
     font-family: 'DM Sans';
     font-size: 1.6rem;
@@ -26,6 +34,9 @@ body{
     width: 37.5rem;
     margin-inline:auto;
     padding-inline:2.4rem;  
+}
+ul{
+    list-style: none;
 }
 
 /* ===HEADER============================================= */
@@ -38,7 +49,7 @@ header{
 
 header::before {
     content: "";
-    width:100vw;
+    width:100%;
     height: calc(108rem + var(--nav-height));
     background-color: var(--brand-light);
     display: block; 
@@ -171,6 +182,50 @@ nav.scroll svg:nth-child(1) path{
 nav.scroll svg:nth-child(2) path{
     stroke:white;
 }
+
+/* ===MENU-EXPANDED============================= */
+body.menu-expanded {
+    overflow: hidden; /* remove os scroll x e y ( transbordamento de contéudo */ 
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu{
+    opacity: 0;
+    visibility: 0;
+}
+
+/* mostra o menu */
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+body.menu-expanded nav{
+    position:relative;
+}
+
+.social-links{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 3.2rem;
+}
+
+
 
 
 
