@@ -1,4 +1,4 @@
-/* ===GERAL============================================== */
+           /* ===GERAL============================================== */
 *{
     margin: 0;
     padding: 0;
@@ -53,10 +53,47 @@ ul{
     list-style: none;
 }
 
+img{
+    max-width: 100%;
+}
+
 section{
     padding-block:10rem; 
 }
 
+section header h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+
+    margin-bottom: 1.6rem;
+}
+
+section header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+    color: var(--headline);
+}
+
+section header h1 {
+    font-size: 3.4rem;
+    color: var(--headline);
+    line-height: 130%;
+
+    margin-bottom: 2.4rem;
+}
+
+section .content p {
+    font-weight: 400;
+    font-size:1.6rem;
+    line-height: 150%;
+
+    color: var(--paragraph);
+}
 
 /* ===NAVIGATION============================= */
 
@@ -226,19 +263,6 @@ body.menu-expanded .logo path{
     z-index: -1;    
 }
 
-#home h4{
-    font-size: 1.4rem;
-    color: var(--primary-color);
-    margin-bottom: 1.6rem;
-}
-
-#home h1{
-    font-size: 3.4rem;
-    color: var(--headline);
-    line-height: 130%;
-
-    margin-bottom: 2.4rem;
-}
 
 #home p{
     font-size: 1.8rem;
@@ -283,7 +307,7 @@ body.menu-expanded .logo path{
 
 /*  */
 
-#home.stats{
+#home .stats{
     width:32.7rem;
 
     padding-block: 4rem; /* padding top- bottom = 4rem  */ 
@@ -299,7 +323,7 @@ body.menu-expanded .logo path{
     gap: 6rem;
 }
 
-#home.stat h3{
+#home .stat h3{
     font-size: 4.8rem;
     color: var(--headline);
     line-height: 130%;
@@ -307,7 +331,7 @@ body.menu-expanded .logo path{
     margin-bottom: .4rem;
 }
 
-#home.stat p {
+#home .stat p {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.6rem;
@@ -331,11 +355,6 @@ body.menu-expanded .logo path{
 }
 
 #services header h2 {
-    font-size: 3rem;
-    line-height: 3.9rem;
-
-    color: var(--headline);
-
     margin-bottom: 6rem;
 }
 
@@ -360,9 +379,19 @@ body.menu-expanded .logo path{
 
 /* ===ABOUT========================================== */
 
+#about{
+    text-align: left;
+    background-color: var(--brand-beige);
+}
 
+#about header h2{
+    margin-bottom: 2.4rem;
+}
 
-
+#about .content p {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;   
+}
 
 
 

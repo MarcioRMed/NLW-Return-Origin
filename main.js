@@ -17,7 +17,7 @@ function closeMenu(){
     document.body.classList.remove('menu-expanded')
 }
 
-// Animação
+// Animação 
 
 ScrollReveal({
     origin: 'top',
@@ -29,4 +29,8 @@ ScrollReveal({
     #home .stats,
     #services,
     #services header,
-    #services .card`);
+    #services .card,
+    #about,
+    #about header,
+    #about .content,
+    #about img`);
