@@ -9,7 +9,7 @@
     
     --hue:290; /*matiz da cor*/
 
-    --primary-color: hsl(170, 100%, 26%);
+    /* --primary-color: hsl(170, 100%, 26%); */
     --primary-color: hsl(var(--hue), 100%, 26%);
     --headline: hsl(210, 11, 1%, 15%);
     --paragraph: hsl(210, 9%, 31%);
@@ -21,7 +21,8 @@
     /* diferença antes 170-148 = 22 */
 
     
-    --brand-dark: hsl(170, 100%, 14%);
+    /* --brand-dark: hsl(170, 100%, 14%); */
+    --brand-dark: hsl(calc(var(--hue)), 100%, 14%);
 
 
     --bg-light: hsl(180,14%,97%);
@@ -145,8 +146,6 @@ section .content p {
     gap: 3.2rem;
 }
 
-
-
 /* custon colors */
 
 #services .card circle{
@@ -158,15 +157,20 @@ section .content p {
     fill:var(--primary-color)
 }
 
-#navigation.scroll .logo path[fill*="00856F"]{
-    fill:white;
-}
-
-
+button.open-menu path[stroke*="#00856F"],
 #contact li path{
-    stroke:var(--primary-color);
+    stroke: var(--primary-color);
 }
 
+body.menu.expanded #navgation .logo path,
+#navigation.scroll .logo path{
+    fill: white;
+}    
+
+/* procura por stroke */
+#navigation.scroll button.open-menu path[stroke*="#00856F"]{
+    stroke: white;
+}
 
 /* ===NAVIGATION============================= */
 
@@ -193,17 +197,8 @@ nav .wrapper{
 }
 
 nav.scroll{
-    background: var(--primary-color);
-   
+    background: var(--primary-color);  
     
-}
-
-nav.scroll .logo path{
-    fill:white;
-}
-
-nav.scroll button path{
-    stroke:white;
 }
 
 nav button{

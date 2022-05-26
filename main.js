@@ -1,3 +1,4 @@
+// .addEventListener('event', function(){})
 window.addEventListener('scroll', onScroll)
 
 onScroll()
@@ -33,7 +34,7 @@ function closeMenu(){
     document.body.classList.remove('menu-expanded')
 }
 
-// Animação 
+// Animação SrollReveal - lib
 
 ScrollReveal({
     origin: 'top',
@@ -50,3 +51,4 @@ ScrollReveal({
     #about header,
     #about .content,
     #about img`);
+
