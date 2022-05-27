@@ -538,7 +538,6 @@ footer .social-links{
 /*  acima 1024px  */
 @media (min-width:1024px) {
 /* ===GERAL========================== */
-
 body{
     overflow: auto; /* transbordar - scroll */
 }
@@ -552,6 +551,10 @@ section{
     padding-block: 16rem;
 }
 
+section h2{
+    font-size: 4rem;
+    line-height: 5.2rem;
+}
 /* ===NAVIGATION========================== */
     
     /* reset */
@@ -739,12 +742,26 @@ section{
     width:42rem;
 }
 
-/* ===SERVICES========================================= */
+/* ===SERVICES====================================== */
 
+#services h2{
+    width: 47rem;
+    margin-inline: auto;
+}
 
+#services .cards{
+    flex-direction: row;
+    flex-wrap:wrap; /*respeita o tamanho do card*/ 
+    gap: 4rem;
+}
 
+#services .card{
+    width: 30%;
+    flex-grow: 1; /*faz o cartao cresc. e ocupar os espaços restantes, com forme a necessidade*/
+}
 
 }
+/* ===ABOUT====================================== */
 
 
 
