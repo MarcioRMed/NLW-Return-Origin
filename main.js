@@ -11,12 +11,8 @@ function onScroll(){
     activateMenuAtCurrentSection(services)
     activateMenuAtCurrentSection(about)
     activateMenuAtCurrentSection(contact)
-    activateMenuAtCurrentSection(depositions)
-
-    
+    activateMenuAtCurrentSection(depositions)    
 }
-
-
 
 
 function activateMenuAtCurrentSection(section){
@@ -43,8 +39,6 @@ function activateMenuAtCurrentSection(section){
     // o final da secao passsou da linha alvo
     const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
-    // console.log('O fundo da seção passou da linha? ', sectionEndPassedTargetline)
-
 
     //limites da seção
     const sectionBoundaries = sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
@@ -62,15 +56,7 @@ function activateMenuAtCurrentSection(section){
 
 
 
-
-
-
-
-
-
-
-
-
+    
     //===== informações dos dados e da lógica=========
     console.log('inicio do top ', sectionId, sectionTop)
     console.log('linha alvo ', targetLine)    
@@ -78,6 +64,8 @@ function activateMenuAtCurrentSection(section){
 
  
 //    console.log('O topo da seção chegou ou passou da linha? ', sectionTopReachOrPassedTargetline)
+
+ // console.log('O fundo da seção passou da linha? ', sectionEndPassedTargetline)
 
 }
 
