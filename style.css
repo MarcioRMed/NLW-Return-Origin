@@ -539,7 +539,7 @@ footer .social-links{
 @media (min-width:1024px) {
 /* ===GERAL========================== */
 body{
-    overflow: auto; /* transbordar - scroll */
+    overflow: auto; /*transbordar - scroll*/
 }
 
 .wrapper{
@@ -548,7 +548,7 @@ body{
 }
 
 .col-a{
-    grid-area:A;
+    grid-area: A;
 }
 
 .col-b{
@@ -596,6 +596,7 @@ section header h2{
         align-items: center;
         justify-content:space-between;
         width: 60%;
+        /* width: 75%; */
     }
 
     nav#navigation .menu ul:nth-child(1){

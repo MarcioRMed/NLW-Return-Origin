@@ -8,8 +8,12 @@ function onScroll(){
     showBackToTopButtonOnScroll()
 
     activateMenuAtCurrentSection(home)
-    // activateMenuAtCurrentSection(services)
+    activateMenuAtCurrentSection(services)
+    activateMenuAtCurrentSection(about)
+    activateMenuAtCurrentSection(contact)
+    activateMenuAtCurrentSection(depositions)
 
+    
 }
 
 
@@ -30,12 +34,8 @@ function activateMenuAtCurrentSection(section){
     // o topo da seção chegou ou utropassou a linha alvo
     const sectionTopReachOrPassedTargetline = targetLine >= sectionTop
     
-
-
     // verifica se a base está abaixo da linha alvo
     // quais dados vou precisar?
-
-
 
     // a secao termina onde?
     const sectionEndsAt = sectionTop + sectionHeight
@@ -43,10 +43,22 @@ function activateMenuAtCurrentSection(section){
     // o final da secao passsou da linha alvo
     const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
-    console.log('O fundo da seção passou da linha? ', sectionEndPassedTargetline)
+    // console.log('O fundo da seção passou da linha? ', sectionEndPassedTargetline)
 
 
+    //limites da seção
+    const sectionBoundaries = sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
 
+
+    const sectionId = section.getAttribute('id')
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+
+    menuElement.classList.remove('active')
+    if(sectionBoundaries){
+        menuElement.classList.add('active')
+        console.log('estou na seção na', sectionId, sectionBoundaries)
+    }
 
 
 
@@ -60,12 +72,12 @@ function activateMenuAtCurrentSection(section){
 
 
     //===== informações dos dados e da lógica=========
-    console.log('inicio do top ', sectionTop)
+    console.log('inicio do top ', sectionId, sectionTop)
     console.log('linha alvo ', targetLine)    
-    console.log('final do home ', sectionHeight)
+    console.log('final do home ', sectionId, sectionHeight)
 
  
-   console.log('O topo da seção chegou ou passou da linha? ', sectionTopReachOrPassedTargetline)
+//    console.log('O topo da seção chegou ou passou da linha? ', sectionTopReachOrPassedTargetline)
 
 }
 
